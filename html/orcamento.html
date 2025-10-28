@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento - Vi Diniz</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Vi Diniz</a>
+            <nav class="nav-menu">
+                <button id="mobile-menu-button">Menu</button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                    <li><a href="orcamento.html" class="btn-primary">Orçamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contato" class="section-padding page-header">
+            <div class="container">
+                <h2>Faça seu Orçamento</h2>
+                <p class="subtitle text-center">Me conte sua ideia e vamos transformá-la em arte na pele. <br>O prazo para resposta é de até 48 horas.</p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Seu nome completo" required>
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                    <input type="tel" name="phone" placeholder="Seu WhatsApp (com DDD)" required>
+                    <textarea name="message" rows="6" placeholder="Descreva sua ideia em detalhes: o que é, qual o significado, local do corpo e tamanho aproximado em centímetros." required></textarea>
+                    <label for="reference">Envie suas imagens de referência:</label>
+                    <input type="file" name="reference" accept="image/*" multiple>
+                    <button type="submit" class="btn-primary">Enviar Pedido de Orçamento</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vi Diniz. Todos os direitos reservados.</p>
+             <p>Desenvolvido por Gildo Dev</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

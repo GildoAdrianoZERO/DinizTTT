@@ -1,0 +1,165 @@
+/* --- VARIAVEIS GLOBAIS E RESET --- */
+:root {
+    --bg-dark: #121212;
+    --bg-light: #1E1E1E;
+    --text-primary: #F5F5F5;
+    --text-secondary: #A0A0A0;
+    --accent-color: #D4AF37;
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Lora', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { font-family: var(--font-title); margin-bottom: 20px; }
+h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+p { margin-bottom: 1rem; }
+.section-padding { padding: 80px 0; }
+.section-dark { background-color: var(--bg-light); }
+.text-center { text-align: center; }
+
+/* Adicionado para dar espaço ao header fixo */
+.page-header { padding-top: 140px; }
+
+/* --- BOTÕES --- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-family: var(--font-title);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+}
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    font-weight: bold;
+}
+.btn-primary:hover { background-color: transparent; color: var(--accent-color); }
+.btn-secondary { background-color: transparent; color: var(--accent-color); }
+.btn-secondary:hover { background-color: var(--accent-color); color: var(--bg-dark); }
+
+/* --- HEADER --- */
+.header {
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-title); font-size: 1.5rem; font-weight: bold; color: var(--text-primary); text-decoration: none; }
+.nav-list { list-style: none; display: flex; align-items: center; gap: 25px; }
+.nav-list a { color: var(--text-primary); text-decoration: none; font-family: var(--font-title); transition: color 0.3s ease; }
+.nav-list a:hover { color: var(--accent-color); }
+#mobile-menu-button { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+/* --- SEÇÃO HERO --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://i.imgur.com/G4hP5G4.jpeg') no-repeat center center/cover;
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; font-style: italic; margin-bottom: 30px; }
+
+/* --- GALERIA (PORTFÓLIO) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); filter: brightness(0.8); }
+
+/* --- SOBRE (HOME) --- */
+.about-container { display: flex; align-items: center; gap: 40px; }
+.about-image { flex-basis: 40%; }
+.about-image img { width: 100%; border-radius: 5px; }
+.about-text { flex-basis: 60%; }
+
+/* --- LOJA --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.product-item {
+    background-color: var(--bg-light);
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+.product-item img { width: 100%; border-radius: 5px; margin-bottom: 15px; }
+.price { font-family: var(--font-title); font-size: 1.2rem; font-weight: bold; color: var(--accent-color); margin: 10px 0; }
+
+/* --- CUIDADOS --- */
+.care-content { display: flex; justify-content: space-around; gap: 40px; }
+.care-content ul { list-style: none; }
+.care-content li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+.care-content li::before { content: '✓'; color: var(--accent-color); position: absolute; left: 0; }
+
+/* --- CONTATO/ORÇAMENTO --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input, .contact-form textarea, .contact-form label {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    border-radius: 5px;
+    font-family: var(--font-body);
+}
+.contact-form label { padding: 0; border: none; background: none; }
+.contact-form input[type="file"] { padding: 10px; }
+
+/* --- RODAPÉ --- */
+.footer { background-color: var(--bg-light); text-align: center; padding: 30px 0; color: var(--text-secondary); }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    #hero h1 { font-size: 2.5rem; }
+    #mobile-menu-button { display: block; }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: var(--bg-light);
+        width: 100%;
+        padding: 20px;
+    }
+    .nav-list.active { display: flex; }
+    .about-container { flex-direction: column; }
+    .care-content { flex-direction: column; }
+    .page-header { padding-top: 120px; }
+}
